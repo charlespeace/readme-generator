@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/charlespeace/readme-generator/issues"
   },
-  "homepage": "https://github.com/charlespeace/readme-generator#readme"
+  "homepage": "https://github.com/charlespeace/readme-generator#readme",
+  "devDependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
