@@ -1,10 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { generateMarkdown } = require('./generateMarkdown')
+// const { generatePage } = require('./generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = answers => {
+const questions = data => {
+    // if (!data.project) {
+    //     data.project = [];
+    // }
     return inquirer.prompt([
         {
             type: 'input',
@@ -52,31 +55,39 @@ const questions = answers => {
             message: 'What is the best way for users to reach me with additional questions?',
         }
     ])
-    .then(projectData => {
-        answers.push(projectData);
-          return answers;
-    });
-};
-
-// TODO: Create a function to write README file
-function writeToFile(projectData) {
-    return new Promise((resolve, reject) => {
-        fs.writeFile('./write', projectData, err => {
-            if (err) {
-                reject(err);
-                return;
-            }
-            resolve({
-                ok: true,
-                message: 'File created!'
-            });
-        });
-    });
+    // .then(projectData => {
+    //     data.project.push(projectData);
+    // });
 };
 
 // TODO: Create a function to initialize app
-// function init() {};
+const generatePage = projectArr => {
+    return `
+    #${title}
+    #${description}
+    #${installation}
+    #${usage}
+    #${contribution}
+    #${tests}
+    #${github}
+    #${email}
+    #${contact}
+    `;
+};
+
+// TODO: Create a function to write README file
+const writeToFile = (generatePage) => {
+    fs.writeFile('./write/README.md', generatePage, err => {
+        if (err) throw new Error(err);
+        console.log('File created!');
+    });
+};
 
 // Function call to initialize app
 questions()
-    .then(generateMarkdown)
+    .then(data => {
+        return generatePage(data);
+    })
+    .then(generatePage => {
+        return writeToFile(generatePage);
+    })

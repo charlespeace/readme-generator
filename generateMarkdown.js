@@ -14,38 +14,43 @@ const fs = require('fs');
 // function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+// const generatePage = projectArr => {
+//     return `
+//     # ${data.title}
+
+//     # Table of Contents
+//     -[Description](#Description)
+//     -[Installation](#Installation)
+//     -[Usage](#Usage)
+//     -[Contribution](#Contribution)
+//     -[Tests](#Tests)
+//     -[Questions](#Questions)
+
+//     ## Description
+//     -${data.description}
+
+//     ## Installation
+//     -${data.installation}
+
+//     ## Usage
+//     -${data.usage}
+
+//     ## Contribution
+//     -${data.contribution}
+
+//     ## Tests
+//     -${data.test}
+
+//     ## Questions
+//     -${data.gihub}
+//     -${data.email}
+//     -${data.contact}
+// `;
+// };
+
+module.exports = templateData => {
+    const { project } = templateData; 
     return `
-    # ${data.title}
-
-    # Table of Contents
-    -[Description](#Description)
-    -[Installation](#Installation)
-    -[Usage](#Usage)
-    -[Contribution](#Contribution)
-    -[Tests](#Tests)
-    -[Questions](#Questions)
-
-    ## Description
-    -${data.description}
-
-    ## Installation
-    -${data.installation}
-
-    ## Usage
-    -${data.usage}
-
-    ## Contribution
-    -${data.contribution}
-
-    ## Tests
-    -${data.test}
-
-    ## Questions
-    -${data.gihub}
-    -${data.email}
-    -${data.contact}
-`;
+    ${generatePage(project)}
+    `;
 };
-
-module.exports = generateMarkdown;
