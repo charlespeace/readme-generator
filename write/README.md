@@ -1,5 +1,5 @@
 
-# Sample Project Title 2022
+# Sample
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Table of Contents
@@ -17,37 +17,37 @@
 
 
 ## Description
-* Here will be a brief description of the project. It will explain what the project is and why the project exists. The description will also include some additional info concerning the project.
+* Sample
 
 
 ## Installation
-* If there are any installation instructions for the project, they should be listed here.
+* E
 
 
 ## Usage
-* Additional usage information should be listed here. This space can also be used to explain the purpose of the project.
+* E
 
 ## Contribution
-* Any contributors should be listed here.
+* F
 
 
 ## Tests
-* This space is for any instructions concerning testing the project. It can also include any info on past testing.
+* F
 
 
 ## Questions
-* Github: Sample username here
+* Github: F
 
-* Email: Sample email address here
+* Email: F
 
-* Users are encouraged to reach out with any questions or concerns. Here will say what is the best method to reach the developer.
+* F
 
 
 ## License
 
 ISC License
 
-Copyright (c) 2022 Sample Project Title 2022
+Copyright (c) 2022 Sample
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 

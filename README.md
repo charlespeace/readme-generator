@@ -9,3 +9,4 @@ A file generator accessed through the terminal by executing 'node index.js' in t
 * Inquirer
 
 ## Walkthrough
+https://drive.google.com/file/d/1ovUQ3aRxwzSCUoHJ7tJJWoZN9rNVCg8v/view
