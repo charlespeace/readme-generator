@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { renderLicenseBadge } = require('./generateMarkdown');
+const { renderLicenseBadge, renderLicenseSection } = require('./generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = data => {
@@ -46,7 +46,7 @@ const questions = data => {
             type: 'list',
             name: 'license',
             message: 'Which license will the application be covered under?',
-            choices: ['MIT','ISC','GNU','Apache','BSD', 'None'],
+            choices: ['MIT','ISC','GNU', 'None'],
         },
         {
             type: 'input',
@@ -107,11 +107,6 @@ ${renderLicenseBadge(project)}
 ## Usage
 * ${project.usage}
 
-
-## License
-${project.license}
-
-
 ## Contribution
 * ${project.contribution}
 
@@ -126,6 +121,10 @@ ${project.license}
 * Email: ${project.email}
 
 * ${project.contact}
+
+
+## License
+${renderLicenseSection(project)}
     `;
 };
 
