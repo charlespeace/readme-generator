@@ -5,9 +5,6 @@ const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = data => {
-    // if (!data.project) {
-    //     data.project = [];
-    // }
     return inquirer.prompt([
         {
             type: 'input',
@@ -55,23 +52,40 @@ const questions = data => {
             message: 'What is the best way for users to reach me with additional questions?',
         }
     ])
-    // .then(projectData => {
-    //     data.project.push(projectData);
-    // });
 };
 
 // TODO: Create a function to initialize app
-const generatePage = projectArr => {
+const generatePage = project => {
     return `
-    #${title}
-    #${description}
-    #${installation}
-    #${usage}
-    #${contribution}
-    #${tests}
-    #${github}
-    #${email}
-    #${contact}
+# ${project.title}
+
+# Table of Contents
+-[Description](#Description)
+-[Installation](#Installation)
+-[Usage](#Usage)
+-[Contribution](#Contribution)
+-[Tests](#Tests)
+-[Questions](#Questions)
+
+## Description
+-${project.description}
+
+## Installation
+-${project.installation}
+
+## Usage
+-${project.usage}
+
+## Contribution
+-${project.contribution}
+
+## Tests
+-${project.tests}
+
+## Questions
+-Github: ${project.github}
+-Email: ${project.email}
+-${project.contact}
     `;
 };
 
@@ -86,6 +100,7 @@ const writeToFile = (generatePage) => {
 // Function call to initialize app
 questions()
     .then(data => {
+        console.log(data)
         return generatePage(data);
     })
     .then(generatePage => {
